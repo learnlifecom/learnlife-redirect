@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  accounts:
+    image: www
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    command: ["puma"]
+    environment:
+      DATABASE_URL: postgres://postgres:secret@pg/accounts_development
+      RAILS_ENV: development
+      REDIS_URL: redis://redis:6379/0/session
+      JWT_SECRET: test
+      HOST: localhost:3000
+    ports:
+      - 9292:9292
+    volumes:
+      - .:/app
+      - www_bundle:/app/vendor/bundle/
+
+volumes:
+  www_bundle:
