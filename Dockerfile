@@ -12,4 +12,4 @@ RUN bundle install --no-cache --retry 3 --jobs 4
 
 COPY . .
 
-CMD ["puma", "-e", "production"]
+CMD ["puma", "-e", "production", "-b", "tcp://0.0.0.0:8080"]
