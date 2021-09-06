@@ -6,4 +6,4 @@ app = Rack::Builder.new do
   end
 end
 
-run Rack::HostRedirect.new(app, {'www.learnlife.com' => 'learnlife.com'})
+run Rack::HostRedirect.new(app, {'learnlife.com' => 'www.learnlife.com'})
