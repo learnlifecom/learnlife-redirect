@@ -14,5 +14,11 @@ run Rack::HostRedirect.new(app, {
                                host: 'www.learnlife.com',
                                path: '/alliance',
                                query: nil
+                             },
+
+                             'book.learnlife.com' => {
+                               host: 'www.learnlife.com',
+                               path: '/summer-camps',
+                               query: nil
                              }
                            })
